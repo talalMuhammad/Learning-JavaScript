@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Replace Element</h1>
+    <hr />
+
+    <ul id="navbar">
+      <li>Home</li>
+      <li>Products</li>
+      <li>Contect Us</li>
+    </ul>
+
+    <script>
+      // Hamary pas condition he ky list sy Products ko replace kar ky Services banana he
+
+      let nevbar = document.getElementById("nevbar");
+
+      let servicesLI = document.createElement("li");
+      servicesLI.textContent = "Services";
+
+      //   console.log(servicesLI);
+
+      let products = navbar.firstElementChild.nextElementSibling;
+
+      //   console.log(products);
+
+      navbar.replaceChild(servicesLI, products);
+
+      /*
+      
+(*c)navbar.replaceChild( (*a) servicesLI, (*b) products )
+
+(*a) => yahan ham wo variable daty hen jo hm replace ky bd show karana chahty hen jesy ab hm ny yahan wo variable dia he jis variable me hm ny services ka li bana ky store karaya tha
+
+(*b) => yahan hm wo variable daty hen jis ko replace karna chahty hen, jesy ab hm ny product ky li ko 1 variable ko get kar liya tha, wo variable hm yahan day gy
+
+(*c) => ye bhi parant pe use hota he
+
+      */
+    </script>
+
+    <script src="app.js"></script>
+  </body>
+</html>

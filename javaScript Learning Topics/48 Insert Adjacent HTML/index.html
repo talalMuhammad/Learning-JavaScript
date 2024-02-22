@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Insert Adjacent HTML</h1>
+    <hr />
+
+    <!-- beforebegin  -->
+    <ul id="navbar">
+      <!-- afterbegin -->
+      <li>Products</li>
+      <li>About</li>
+      <!-- beforeend -->
+    </ul>
+    <!-- afterend -->
+
+    <script>
+      /* 
+        
+        1. hamary pas condition he ky navbar sy pehly ham ny heading lagani he navbar name sy
+        2. ul ka first child Home li banana he
+        3. ul me last li contect ka banana he
+        4. ul ky bd 1 thankYou Note likhna he
+
+        */
+
+      let navbar = document.querySelector("#navbar");
+
+      let h3 = document.createElement("h3");
+      h3.textContent = "NAVBAR";
+
+      navbar.insertAdjacentElement("beforebegin", h3);
+
+      let home = document.createElement("li");
+
+      home.textContent = "Home";
+
+      navbar.insertAdjacentElement("afterbegin", home);
+
+      let contect = document.createElement("li");
+      contect.textContent = "Contect";
+
+      navbar.insertAdjacentElement("beforeend", contect);
+
+      let thankYouNote = document.createElement("p");
+      thankYouNote.textContent =
+        "Thank you For Visit this Wonderfull And Amaizing Website 😂";
+
+      navbar.insertAdjacentElement("afterend", thankYouNote);
+    </script>
+
+    <script src="app.js"></script>
+  </body>
+</html>

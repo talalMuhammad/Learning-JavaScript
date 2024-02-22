@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Create and Append Element</h1>
+    <hr />
+
+    <ul id="list">
+      <li>item 1</li>
+      <li>item 2</li>
+      <li>item 3</li>
+    </ul>
+
+    <script>
+      let list = document.querySelector("#list");
+
+      let item4 = document.createElement("li");
+
+      //   console.log(item4); // <li></li>
+
+      let item4text = document.createTextNode(
+        "New item 4 added by using method"
+      );
+
+      //   console.log(item4text); // "New item 4 added by using method"
+
+      item4.appendChild(item4text);
+
+      //   console.log(item4); // <li>New item 4 added by using method</li>
+
+      list.appendChild(item4);
+
+      let item5 = document.createElement("li");
+
+      //   console.log(item5);// <li></li>
+
+      item5.textContent = "New item 5 added by using Property";
+
+      //   console.log(item5);// <li>New item 5 added by using Property</li>
+
+      item5.className = "class1 class2";
+
+      item5.id = "item5";
+
+      //   console.log(item5); // <li class="class1 class2" id="item5">New item 5 added by using Property</li>
+
+      list.appendChild(item5);
+    </script>
+
+    <script src="app.js"></script>
+  </body>
+</html>

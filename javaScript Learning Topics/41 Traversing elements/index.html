@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Traversing Elements</h1>
+    <hr />
+
+    <ul>
+      <li>item 1</li>
+      <li id="item2">item 2</li>
+      <li>item 3</li>
+      <li>item 4</li>
+    </ul>
+
+    <ul id="list2">
+      <li>item a</li>
+      <li>item b</li>
+      <li>item c</li>
+    </ul>
+
+    <script src="app.js"></script>
+
+    <script>
+      let item2 = document.querySelector("#item2");
+
+      let item1 = item2.previousElementSibling;
+
+      //   console.log(item1); // <li>item 1</li>
+
+      let item3 = item2.nextElementSibling;
+      //   console.log(item3); // <li>item 3</li>
+
+      let item4 = item3.nextElementSibling;
+
+      //   console.log(item4); // <li>item 4</li>
+
+      let parent = item2.parentElement;
+
+      console.log(parent); // complete ul selected
+
+      let list2 = parent.nextElementSibling;
+      console.log(list2);
+
+      let list2FirstChild = list2.firstElementChild;
+
+      console.log(list2FirstChild); // <li>item a</li>
+
+      let list2LastChild = list2.lastElementChild;
+
+      console.log(list2LastChild); // <li>item c</li>
+
+      let list2Children = list2.children;
+
+      console.log(list2Children); // select all children of list 2, it returns an array formet output = [li,li,li]
+
+      /*
+      
+      Ab jb ham ko element select karna aa gya to hm us pe koi bhi operation perform kar sakty hen apni marzi ka
+      
+      */
+    </script>
+  </body>
+</html>

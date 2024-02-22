@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Remove Child Element</h1>
+    <hr />
+
+    <ol id="list">
+      <li>item 0</li>
+      <li>item 1</li>
+      <li>item 1.5</li>
+      <li>item 2</li>
+      <li>item 2.5</li>
+    </ol>
+
+    <h3 id="heading3">Remove Me 😤</h3>
+
+    <script>
+      /*
+        
+ab hamary pass condition he ky list me sirf item 1, and item 2 rehny chahye baki saron ko remove karna he or h3 remove me 😤 ko bhi javaScript ki madad sy remove karna he
+
+        */
+
+      let list = document.querySelector("#list");
+
+      let item0 = list.firstElementChild;
+
+      list.removeChild(item0);
+
+      let item1andHalf = list.firstElementChild.nextElementSibling;
+
+      console.log(item1andHalf);
+
+      list.removeChild(item1andHalf);
+
+      list.removeChild(list.lastElementChild);
+
+      let heading3 = document.querySelector("#heading3");
+      document.body.removeChild(heading3);
+    </script>
+
+    <script src="app.js"></script>
+  </body>
+</html>

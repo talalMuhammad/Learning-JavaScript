@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Select Element By ID</h1>
+
+    <ul>
+      <li>List 1</li>
+      <li id="list2">List 2</li>
+      <li>List 3</li>
+    </ul>
+    <script src="app.js"></script>
+    <script>
+      var elm = document.getElementById("list2");
+      var elm2 = document.getElementById("li");
+
+      console.log(elm);
+      console.log(elm2); // agar id found nhi hogi to null return hoga
+
+      console.log(elm.innerHTML);
+
+      elm.innerHTML = "<h5>Changed List 2</h5>";
+
+      console.log(elm);
+    </script>
+  </body>
+</html>

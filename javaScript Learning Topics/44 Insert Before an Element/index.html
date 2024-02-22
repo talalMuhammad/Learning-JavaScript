@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Insert Before an Element</h1>
+    <hr />
+
+    <ul id="list">
+      <li>item 1</li>
+      <li>item 3</li>
+      <li>item 5</li>
+      <li>item 7</li>
+    </ul>
+
+    <script>
+      /* 
+
+        ab hm chahty hen ky list sy pehly or <hr> ky bd 1 heading den important list name ki 
+
+        or list me jo item missing hen wo javascript sy add karen
+        
+        appendChild() sy agar hm list me item 0 add karen gy to wo last me add hoga but hm chahty hen ky item 0 ul ka first child ho item 2, item1 or item3 ky bech me add karen, item 4, ko item3 or item 5 ky bech me add karen isi tra agy bhi or last me item 8 appendChild kar ky last me add kar ky list ko complete karna he
+
+        body (*c).insertBefore( (*a) h5, (*b) list )
+
+        (*a) => yahan hm wo variable daty hen jo hm ny element javascript sy create kiya hota he jesy ky yahan hm ny h5 create kiya tha wo rakha he
+
+        (*b) => yahan hm btaty hen position ky kis sy pehly rakhna he is variable ( jo element create kiya tha us ) ko, like list sy pehly rakhna he
+
+        (*c) => insertBefore() function ky liye hamen parent ko access karna parta he us pe insertBefore() function lagaya jata he
+
+        
+        */
+
+      let list = document.querySelector("#list");
+
+      let body = document.body;
+
+      let h5 = document.createElement("h5");
+
+      h5.textContent = "Complete list using javaScript";
+
+      body.insertBefore(h5, list);
+
+      let item0 = document.createElement("li");
+      item0.textContent = "New item 0";
+
+      let item1 = list.firstElementChild;
+
+      list.insertBefore(item0, item1);
+
+      let item2 = document.createElement("li");
+      item2.textContent = "New item 2";
+
+      let item3 = item1.nextElementSibling;
+
+      list.insertBefore(item2, item3);
+
+      let item4 = document.createElement("li");
+      item4.textContent = "New item 4";
+
+      let item5 = item3.nextElementSibling;
+
+      list.insertBefore(item4, item5);
+
+      let item6 = document.createElement("li");
+      item6.textContent = "New item 6";
+
+      list.insertBefore(item6, list.lastElementChild);
+
+      let item8 = document.createElement("li");
+      item8.textContent = "New item 8";
+
+      list.appendChild(item8);
+    </script>
+
+    <script src="app.js"></script>
+  </body>
+</html>

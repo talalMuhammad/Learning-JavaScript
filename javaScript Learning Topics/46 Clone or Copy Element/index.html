@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Clone or Copy Element</h1>
+    <hr />
+
+    <ul id="list1">
+      <li>item 1</li>
+      <li>item 2</li>
+      <li>item 3</li>
+    </ul>
+
+    <script>
+      let list1 = document.querySelector("#list1");
+
+      let list2 = list1.cloneNode(true); // agar hm is me true nhi likhen gy to sirf <ul></ul> tag copy hoga us ky children nhi, hamen kyunky children bhi clone karny hen isi liye hm ny true bhi pass kiya he
+
+      document.body.insertBefore(list2, list1.nextElementSibling);
+
+      //   ab is ny clone to kiya but 2no ul ki id same he jo ky achi practice nhi he to list2 ko list2 name sy id bhi dy daty hen
+
+      list2.id = "list2";
+    </script>
+
+    <script src="app.js"></script>
+  </body>
+</html>
