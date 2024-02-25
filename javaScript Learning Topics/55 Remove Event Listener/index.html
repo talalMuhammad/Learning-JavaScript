@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Remove Event Listener</h1>
+
+    <hr />
+
+    <button id="btn">Click Me</button>
+
+    <script>
+      /*
+
+removeEventListener() sirf external function pe work karta he is liye hm ny external function banaye hen
+
+*/
+
+      let btn = document.querySelector("#btn");
+
+      let click2 = () => {
+        console.log("Click 2");
+      };
+
+      let click3 = () => {
+        console.log("Click 3");
+      };
+
+      btn.addEventListener("click", () => {
+        console.log("click 1");
+      });
+      btn.addEventListener("click", click2);
+      btn.addEventListener("click", click3);
+
+      btn.removeEventListener("click", click2);
+
+      btn.removeEventListener("click", () => {
+        console.log("Click 1");
+      });
+    </script>
+  </body>
+</html>

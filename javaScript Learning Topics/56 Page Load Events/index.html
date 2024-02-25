@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Page Load Events</h1>
+    <hr />
+
+    <img
+      width="500px"
+      id="image1"
+      src="image20mb.jpg"
+      alt="⚠ Heavy Image Maybe Your System Can't Handle this image"
+    />
+
+    <script>
+      /*
+        
+        DOMContentLoaded - 
+            jesy hi page load hoga DOM tree and external files ky load hony sy pehly ye event trigger ho jata he
+
+        Load - 
+            jesy hi complete page load hojata he to forn ye event trigger hojata he
+        
+        */
+
+      window.addEventListener("DOMContentLoaded", () => {
+        console.log("DOM tree Created");
+      });
+
+      window.addEventListener("load", () => {
+        console.log("Fully Loaded");
+      });
+
+      /*
+      
+      agar hm chahty hen ky perticuller koi element jb full load hojye to us ky bd event chaly jesy is case me hm chahty hen ky sirf jesy hi ye img full load hojaye to ye event trigger hojaye
+      
+      */
+
+      let img = document.querySelector("#image1");
+
+      img.addEventListener("load", () => {
+        console.log("Image Loaded");
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      div {
+        height: 200px;
+        width: 200px;
+        border: 5px solid black;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Mouse Events</h1>
+    <hr />
+
+    <div
+      onclick="click()"
+      oncontextmenu="contextmenu()"
+      onmousedown="mousedown()"
+      onmouseenter="mouseenter()"
+      onmouseleave="mouseleave()"
+      onmousemove="mousemove()"
+      onmouseout="mouseout()"
+      onmouseover="mouseover()"
+      onmouseup="mouseup()"
+      onmousewheel="mousewheel()"
+      onscroll="scroll()"
+    ></div>
+
+    <script>
+      let click = () => {
+        console.log("Click");
+      };
+
+      let contextmenu = () => {
+        console.log("Right Click");
+      };
+
+      let mousedown = () => {
+        console.log("Mouse Down");
+      };
+
+      let mouseenter = () => {
+        console.log("Mouse Enter");
+      };
+
+      let mouseleave = () => {
+        console.log("Mouse Leave");
+      };
+
+      let mousemove = () => {
+        console.log("Mouse Move");
+      };
+
+      let mouseout = () => {
+        console.log("Mouse Out");
+      };
+
+      let mouseover = () => {
+        console.log("Mouse Over");
+      };
+
+      let mouseup = () => {
+        console.log("Mouse UP");
+      };
+
+      let mousewheel = () => {
+        console.log("Mouse Wheel");
+      };
+
+      let scroll = () => {
+        console.log("Scroll");
+      };
+    </script>
+  </body>
+</html>

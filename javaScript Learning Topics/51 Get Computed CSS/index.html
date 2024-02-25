@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      h3 {
+        background-color: gray;
+        color: white;
+        font-size: 32px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Get Computed CSS</h1>
+    <hr />
+
+    <h3>Heading h4</h3>
+    <script>
+      let h3 = document.querySelector("h3");
+
+      let getCss = getComputedStyle(h3);
+
+      console.log(getCss);
+      console.log(getCss.color);
+      console.log(getCss.fontSize);
+    </script>
+  </body>
+</html>

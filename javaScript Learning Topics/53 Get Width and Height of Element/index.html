@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      div {
+        height: 100px;
+        width: 100px;
+        border: 5px solid black;
+        padding: 20px;
+        margin: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Get Width and Height of an Element</h1>
+    <hr />
+
+    <div class="container"></div>
+
+    <script>
+      let container = document.querySelector("div");
+
+      /*
+      
+      clientWidth and clientHeight napny me padding ko include karta he border ko nhi
+
+      offsetWidth and offsetHeight nappny me padding, or border ko bhi include karta he
+      
+      */
+
+      console.log(container.clientWidth); // 140
+      console.log(container.offsetWidth); // 150
+      console.log(container.clientHeight); //140
+      console.log(container.offsetHeight); // 150
+    </script>
+  </body>
+</html>

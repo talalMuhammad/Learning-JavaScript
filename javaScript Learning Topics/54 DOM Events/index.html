@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>DOM Events</h1>
+    <hr />
+
+    <button id="btn" onclick="alert('Button Was Clicked')">Click Me</button>
+    <script>
+      /*
+
+Jb webpage pe koi state change hota he ya user ky interaction pe hm kuch perform karna chahty hen us ky liye DOM events kam aty hen
+
+for Example:
+
+* when a user clicks 
+* when a webpage loaded
+* when an image has been loaded
+* when the mouse moves over an Element 
+* when an input field is changed
+* when an HTML form is submitted
+* When a user Strokes a key
+
+2 tra sy hm event use karty hen 
+
+1 => inline
+2 => addEventListener
+
+kisi bhi element pe jitny marzi event laga sakty hen
+
+*/
+
+      let btn = document.querySelector("#btn");
+
+      btn.addEventListener("click", () => {
+        console.log("Button was Clicked");
+      });
+
+      btn.addEventListener("mouseover", () => {
+        console.log("Mouse In");
+      });
+      btn.addEventListener("mouseout", () => {
+        console.log("Mouse Out");
+      });
+    </script>
+  </body>
+</html>

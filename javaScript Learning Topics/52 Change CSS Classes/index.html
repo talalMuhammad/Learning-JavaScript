@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .red {
+        background-color: red;
+        color: white;
+      }
+      .border {
+        border: 5px solid blue;
+      }
+
+      .height {
+        height: 40px;
+      }
+      .fontSize {
+        font-size: 40px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Change CSS Classes</h1>
+    <hr />
+
+    <h3 id="heading" class="red border">Heading</h3>
+
+    <script>
+      let heading = document.querySelector("#heading");
+
+      console.log(heading.className); // red border
+
+      //   agar hm className property sy concat kar karhy hen kisi class ko to space dana lazmi he
+
+      heading.className += " height";
+
+      console.log(heading.className); // red border height
+
+      console.log(heading.classList); // ["red", "border", "height"]
+
+      for (let classes of heading.classList) {
+        console.log(classes);
+      }
+
+      heading.classList.add("fontSize");
+
+      console.log(heading.className); // red border height fontSize
+
+      heading.classList.remove("height");
+
+      console.log(heading.className); // red border fontSize
+
+      heading.classList.replace("fontSize", "height");
+
+      console.log(heading.className); // red border height
+
+      //   toggle() method agar class lagi hogi to us ko hata dy ga or agar class nhi lgi hogi to laga dy ga
+
+      heading.classList.toggle("fontSize");
+
+      console.log(heading.className); // red border height fontSize
+
+      heading.classList.toggle("fontSize");
+
+      console.log(heading.className); // red border height
+
+      //   agar hm dakhna chahty hen ky ye class lgai he ya nhi to contains() method ka use karty hen ye boolean value return karta he
+
+      var isPresentThisClass = heading.classList.contains("fontSize");
+
+      console.log(isPresentThisClass); // false
+
+      var isPresentThisClass = heading.classList.contains("height");
+
+      console.log(isPresentThisClass); // true
+    </script>
+  </body>
+</html>

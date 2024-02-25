@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Change Attributes</h1>
+    <hr />
+
+    <button id="sendBtn" name="form1">Send</button>
+
+    <script>
+      let button = document.querySelector("#sendBtn");
+
+      let btnClass = button.getAttribute("class");
+
+      console.log(btnClass); // null
+
+      let btnId = button.getAttribute("id");
+
+      console.log(btnId); // sendBtn
+
+      console.log(button.hasAttribute("id")); // true
+      console.log(button.hasAttribute("class")); // false
+
+      console.log(button.hasAttributes()); // true
+
+      button.setAttribute("class", "btnClass");
+
+      console.log(button); // <button id="sendBtn" name="form1" class="btnClass">Send</button>
+
+      button.removeAttribute("name");
+
+      console.log(button); // <button id="sendBtn" class="btnClass">Send</button>
+
+      console.log(button.removeAttribute("value")); // undefined
+
+      console.log(button.getAttributeNames()); // ["id","class"]
+
+      console.log(button.attributes);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Change Inline Style</h1>
+    <hr />
+    <h4 style="font-size: 30px">Heading H4</h4>
+    <script>
+      let h4 = document.querySelector("h4");
+
+      //   h4.style.cssText = "border:3px solid red";
+
+      h4.style.cssText += "border:3px solid blue";
+
+      //   h4.setAttribute("style", "color:blue");
+
+      h4.style.border = "5px solid aqua";
+    </script>
+  </body>
+</html>
