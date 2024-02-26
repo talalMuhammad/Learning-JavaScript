@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Prevent Default</h1>
+    <hr />
+
+    <!-- preventDefault() kisi bhi element ka natural behaviour change karny ky liye use karty hen jesy hm ny <a /> tag or <form> tag ky sath kiya  -->
+
+    <a href="https://www.google.com" id="googleLink">Go to Google</a>
+
+    <form action="" id="myForm">
+      <input type="text" />
+      <input type="submit" value="Submit" />
+    </form>
+
+    <script>
+      let googleLink = document.querySelector("#googleLink");
+
+      let myForm = document.querySelector("#myForm");
+
+      googleLink.addEventListener("click", (e) => {
+        e.preventDefault();
+        console.log("You can't go to Google...");
+      });
+
+      myForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+        console.log("You can't Submit this form");
+      });
+    </script>
+  </body>
+</html>

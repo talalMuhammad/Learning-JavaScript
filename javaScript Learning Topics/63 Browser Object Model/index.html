@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Browser Object Model (BOM)</h1>
+    <hr />
+
+    <!-- 
+
+        The Borwser Object dModel (BOM) is used to interact with the browser.
+
+        the Window object represents a window in browser
+
+        an Object of window is created automatically by the browser
+
+        all Global javaScript objects, functions, and variables with the var keyword automatically become members of the window object.
+
+        Global variables are properties of the window object.
+
+        Global functions are methods of the window object.
+
+
+
+
+     -->
+    <script>
+      var myName = "Ahmed";
+
+      let myAge = 18;
+
+      const myEmail = "ahmed@example.com";
+
+      console.log(myName); // Ahmed
+      console.log(myAge); // 18
+      console.log(myEmail); // ahmed@example.com
+
+      // hm ny sekha var sy jo variable banaya jata he wo window object ki property bn jata he to matlab ky hm window.myName jb karen to "Ahmed" return hona chahye. RIGHT... ok dakhty hen.
+
+      // or sath hi hm let or const ko bhi window object sy access karny koshish karty hen dakhty hen kiya milta he hamen 😜
+
+      console.log(window.myName); // Ahmed
+      console.log(window.myAge); // undefined
+      console.log(window.myEmail); // undefined
+
+      //   window browser ka defauld object hota he isi liye agar hm window na bhi likhen to bhi window ky functions or methods wagaira ko use kar sakty jasy ky yahan myName variable ki example hamary samny he window.alert() bhi use kar sakty hen window.prompt() use kar sakty hen but jb hm janty hen ky window ky functions ya methods ko access karny ky liye window likhna zaruri nhi he isi liye hm window nhi bhi likhy but kisi kisi jaga pe hm window likh ky bhi function ya mathod use karty hen
+
+      // next section me hm or bhi details sy window object ko dakhen gy
+    </script>
+  </body>
+</html>

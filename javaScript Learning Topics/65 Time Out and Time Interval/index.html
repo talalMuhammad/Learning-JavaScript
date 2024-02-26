@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Time Out and Time Interval</h1>
+    <hr />
+
+    <!-- 
+
+        setTimeout(function,TimeInMilliSeconds)
+
+        timeout is liye use hota he jb hm chahty hen ky itny time bd ye function chaly jo hm ny setTimeout me diya hva he 
+
+        timeout clear karny ky liye hmen time out ka rafrence chahye hota he jesa ky example me dikhaya gya he
+
+     -->
+
+    <div>
+      <h3 id="logginHeading">
+        If You don't login within 5 seconds, an alert will appear
+      </h3>
+      <button id="logginBtn">Login</button>
+
+      <h3 id="visitSeconds"></h3>
+      <button id="stopSecondsBtn">Stop Seconds</button>
+    </div>
+
+    <script>
+      let login = false;
+
+      let logginHeading = document.querySelector("#logginHeading");
+
+      let logginBtn = document.querySelector("#logginBtn");
+
+      let checkStatus = setTimeout(() => {
+        alert("Please Login...");
+      }, 5000);
+
+      logginBtn.addEventListener("click", () => {
+        login = true;
+
+        if (login) {
+          clearTimeout(checkStatus);
+          logginBtn.remove();
+          logginHeading.innerHTML = "You Are Logged In 😀";
+        }
+      });
+
+      let visitSeconds = document.querySelector("#visitSeconds");
+
+      let stopSecondsBtn = document.querySelector("#stopSecondsBtn");
+
+      let showSeconds = 0;
+
+      let runningSeconds = setInterval(() => {
+        visitSeconds.innerHTML = showSeconds++;
+      }, 1000);
+
+      stopSecondsBtn.addEventListener("click", () => {
+        clearInterval(runningSeconds);
+        visitSeconds.innerHTML = `${showSeconds - 1} Counting Stoped`;
+        stopSecondsBtn.remove();
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>The Window Object</h1>
+    <hr />
+
+    <button id="btn1">Go to Google</button>
+    <button id="btn2">Go to Yahoo</button>
+    <button id="btn3">Close Google Window</button>
+
+    <script>
+      console.log(window.innerHeight);
+      console.log(window.outerHeight);
+      console.log(window.innerWidth);
+      console.log(window.innerWidth);
+
+      let googleClosed;
+      let yahooClosed;
+
+      let url = "https://www.google.com";
+      let features = "height=500,width=500";
+
+      let btn1 = document.getElementById("btn1");
+      let btn2 = document.getElementById("btn2");
+      let btn3 = document.getElementById("btn3");
+
+      btn1.addEventListener("click", function () {
+        /*
+          
+          // window.open(url, name, featurs)
+
+          .open() method 3 para meters leta he
+          1st => 
+            url hamen dana parta he 
+          2nd => 
+            jo new window hm open karana chahty hen us ka kiya name den like ye is liye hota he ky jesy hm hamary pass 2 button hen 1 google pe ly ky jaye ga or 2nd button yahoo pe ly ky jaye ga agar dono ky name alag alag hongy to google ky liye alag window open hogi or yahoo ky liye alag window open hogi. leken leken leken agar hamary name same hongy to agar pehly hm ny google ki window khulwai hvi he to yahoo pe click karny pr usi window me yahoo open hojaye ga hr url ky liye new new window nhi open hogi
+
+          3rd => jb new window open ho to kis kis features ky sath open ho for example height ya width etc...
+
+        */
+
+        googleClosed = window.open(url, "google", features);
+
+        // .open() ky sary parameters string me bhi dy sakty hen
+      });
+
+      btn2.addEventListener("click", function () {
+        yahooClosed = window.open("https://www.yahoo.com", "google");
+      });
+
+      btn3.addEventListener("click", () => {
+        // close() method use karny ky liye jo window hm ny open karai thi us ka rafrence chahye hota he isi liye ab hamen google ko close karna he to google waly open() ka rafrence liya or close kara di
+
+        googleClosed.close();
+        yahooClosed.close();
+      });
+    </script>
+  </body>
+</html>

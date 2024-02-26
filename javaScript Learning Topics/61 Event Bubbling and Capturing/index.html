@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* Please Ignore CSS, its not CSS practice 🙂*/
+
+      * {
+        text-align: center;
+        align-items: center;
+      }
+      #main {
+        background-color: lightblue;
+        height: 75vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      #container {
+        background-color: lightcoral;
+        height: 50%;
+        width: 50%;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Event Bubbling and Event Capturing</h1>
+    <hr />
+
+    <!-- 
+
+        1. Event Bubbling
+            In the event bubbling model, an event starts at the most specific element and then flows upward the least specific element (the document or even window).
+
+        when you click the button, the click event occurs in the following order
+
+        * button
+        * div
+        * body
+        * html
+        * document
+
+        2. Event Capturing
+            In the event capturing, an event starts at the least specific element and flows downward toward the most specific element.
+
+        when you click the button, the click event occurs in the following order:
+
+        * document
+        * html
+        * body
+        * div
+        * button
+
+
+        addEventListener("eventName", function, useCapture (true/false))
+
+        * the default value is false, which will use the bubbling propagation, when the value is set to true, the event uses the capturing propagation
+
+
+     -->
+
+    <div id="main">
+      <h3>Main Div</h3>
+      <div id="container">
+        <h3>Container Div</h3>
+        <button id="btn">Click Me</button>
+      </div>
+    </div>
+
+    <script>
+      let mainDiv = document.querySelector("#main");
+      let containerDiv = document.querySelector("#container");
+      let btn = document.querySelector("#btn");
+
+      btn.addEventListener("click", () => {
+        console.log("Button Clicked...");
+      });
+
+      containerDiv.addEventListener("click", () => {
+        console.log("Container Div Clicked...");
+      });
+
+      mainDiv.addEventListener("click", () => {
+        console.log("Main Div Clicked...");
+      });
+
+      //
+
+      btn.addEventListener(
+        "click",
+        () => {
+          console.log("Button Clicked with Capturing...");
+        },
+        true
+      );
+
+      containerDiv.addEventListener(
+        "click",
+        () => {
+          console.log("Container Div Clicked with Capturing...");
+        },
+        true
+      );
+
+      mainDiv.addEventListener(
+        "click",
+        () => {
+          console.log("Main Div Clicked with Capturing...");
+        },
+        true
+      );
+
+      //  agar hm chahty hen ky sirf jis pe click hva he usi ka event trigger ho parant ya child ka nhi to us ky liye 1 function ya method use karna parta he jis ka name he stopPropagation()
+
+      btn.addEventListener("click", (event) => {
+        console.log("Button Clicked with stopPropagation()...");
+        event.stopPropagation();
+      });
+
+      containerDiv.addEventListener("click", (event) => {
+        console.log("Container Div Clicked with stopPropagation()...");
+        event.stopPropagation();
+      });
+
+      mainDiv.addEventListener("click", (event) => {
+        console.log("Main Div Clicked with stopPropagation()...");
+        event.stopPropagation();
+      });
+    </script>
+  </body>
+</html>
